@@ -14,10 +14,12 @@
 	\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
 	\node (conn1) [connector, below of=pro2a] {1};
 	\node (mrg1) [merge, right of=conn1, xshift=10cm] {Merge 1};
-    \node (maop1) [manualoperation, below of=conn1] {Operation 1};
+    \node (maop1) [manualoperation, below of=conn1] {Operation 1 text text text};
     \node (pro2c) [papertape, below of=maop1] {Process 2c};
 	\node (out1) [io, below of=pro2c] {Output};
 	\node (stop) [startstop, below of=out1] {Stop};
+	\node (tp1) [datatape, below of=stop] {Tape};
+	\node (prep1) [preperation, below of=tp1] {Preparation 1};
 
 	\draw [arrow] (start) -- (in1);
 	\draw [arrow] (in1) -- (pro1);
@@ -29,10 +31,11 @@
 	\draw [arrow] (conn1) -- (maop1);
 	\draw [arrow] (conn1) -- (mrg1); 
 	\draw [arrow] (pro2b) -| (mrg1);
-	\draw [arrow] (mrg1) |- (pro2c);
+	\draw [arrowdashed] (mrg1) |- (pro2c);
     \draw [arrow] (maop1) -- (pro2c);
 	\draw [arrow] (pro2c) -- (out1);
 	\draw [arrow] (out1) -- (stop);
+	\draw [arrow] (stop) -- (tp1);
 \end{tikzpicture}
 
 \end{document}
