@@ -28,3 +28,5 @@ Note: Adjust the styles and colors as needed for your specific flowchart design.
 Define TikZ styles for flowchart elements
 
 This file should be saved as flowchartdef.sty and included in your LaTeX document.
+
+The file FlowCharts.tex included in the repository is just an example on how to use the style.
