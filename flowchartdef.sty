@@ -2,7 +2,7 @@
 % flowchartdef.sty
 % This file defines the styles for flowchart elements using TikZ.
 % Author: [Haider Al-Saidi]
-% Date: [2024-06]
+% Date: [2026-06]
 % Usage: Include this file in your LaTeX document with \usepackage{flowchartdef}
 % Example usage:
 %   \documentclass{article}
@@ -19,7 +19,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\usetikzlibrary{shapes.geometric, shapes.symbols, arrows}
+\usetikzlibrary{shapes.geometric, shapes.symbols, shapes.misc, arrows}
 
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, 
         minimum height=1cm,text centered, draw=black, fill=red!30]
@@ -28,7 +28,8 @@
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, 
         minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
 \tikzstyle{manualoperation} = [trapezium, minimum width=3cm, minimum height=1cm, text centered, 
-        trapezium stretches body, shape border rotate=180,draw=black, fill=blue!30]
+        trapezium stretches body, shape border rotate=180,draw=black, 
+        text width = 2.5cm,fill=blue!30]
 \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, 
         text width = 3cm, draw=black, fill=orange!30]
 \tikzstyle{document} = [tape, draw, minimum width=3cm, minimum height=1.5cm, text centered, 
@@ -39,4 +40,10 @@
         draw=black, fill=green!30]
 \tikzstyle{merge} = [regular polygon, regular polygon sides=3, minimum width=1cm, minimum height=1cm, 
         scale=0.5, text centered, shape border rotate=180, draw=black, fill=blue!30]
+\tikzstyle{datatape} = [magnetic tape, minimum width=2cm, minimum height=2cm, 
+        text centered, magnetic tape tail extend=0.3cm, draw=black, fill=yellow!40]
+\tikzstyle{preperation} = [chamfered rectangle, draw, chamfered rectangle xsep=2cm, text centered, 
+        minimum height=1cm, text width = 2cm, draw=black, fill=red!30]
+
 \tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{arrowdashed} = [thick, dashed,->,>=stealth]
