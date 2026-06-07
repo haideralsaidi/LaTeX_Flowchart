@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{flowchartdef}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=2cm, scale=0.8, every node/.style={transform shape} ]
+	\node (start) [startstop] {Start};
+	\node (in1) [io, below of=start] {Input};
+	\node (pro1) [process, below of=in1] {Process 1};
+	\node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
+	\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a text text text text text};
+	\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
+	\node (conn1) [connector, below of=pro2a] {1};
+	\node (mrg1) [merge, right of=conn1, xshift=10cm] {Merge 1};
+    \node (maop1) [manualoperation, below of=conn1] {Operation 1};
+    \node (pro2c) [papertape, below of=maop1] {Process 2c};
+	\node (out1) [io, below of=pro2c] {Output};
+	\node (stop) [startstop, below of=out1] {Stop};
+
+	\draw [arrow] (start) -- (in1);
+	\draw [arrow] (in1) -- (pro1);
+	\draw [arrow] (pro1) -- (dec1);
+	\draw [arrow] (dec1) -- node[anchor=east] {Yes} (pro2a);
+	\draw [arrow] (dec1) -- node[anchor=south] {No} (pro2b);
+	\draw [arrow] (pro2b) |- (pro1);
+    \draw [arrow] (pro2a) -- (conn1);
+	\draw [arrow] (conn1) -- (maop1);
+	\draw [arrow] (conn1) -- (mrg1); 
+	\draw [arrow] (pro2b) -| (mrg1);
+	\draw [arrow] (mrg1) |- (pro2c);
+    \draw [arrow] (maop1) -- (pro2c);
+	\draw [arrow] (pro2c) -- (out1);
+	\draw [arrow] (out1) -- (stop);
+\end{tikzpicture}
+
+\end{document}

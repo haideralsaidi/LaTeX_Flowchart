@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% flowchartdef.sty
+% This file defines the styles for flowchart elements using TikZ.
+% Author: [Haider Al-Saidi]
+% Date: [2024-06]
+% Usage: Include this file in your LaTeX document with \usepackage{flowchartdef}
+% Example usage:
+%   \documentclass{article}
+%   \usepackage{tikz}
+%   \usepackage{flowchartdef}
+%   \begin{document}
+%   \begin{tikzpicture}[node distance=2cm, scale=1.0, every node/.style={transform shape} ]
+%       % Your flowchart code here
+%   \end{tikzpicture}
+%   \end{document}
+% Note: Adjust the styles and colors as needed for your specific flowchart design.
+% Define TikZ styles for flowchart elements
+% This file should be saved as flowchartdef.sty and included in your LaTeX document.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usetikzlibrary{shapes.geometric, shapes.symbols, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, 
+        minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{connector} = [circle, minimum width=1cm, minimum height=1cm,text centered, 
+        draw=black, fill=blue!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, 
+        minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{manualoperation} = [trapezium, minimum width=3cm, minimum height=1cm, text centered, 
+        trapezium stretches body, shape border rotate=180,draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, 
+        text width = 3cm, draw=black, fill=orange!30]
+\tikzstyle{document} = [tape, draw, minimum width=3cm, minimum height=1.5cm, text centered, 
+        tape bend top=none, text width = 3cm, draw=black, tape bend height=0.3cm, fill=orange!30]
+\tikzstyle{papertape} = [tape, draw, minimum width=3cm, minimum height=1.5cm, text centered, 
+        text width = 3cm, draw=black, tape bend height=0.3cm, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, 
+        draw=black, fill=green!30]
+\tikzstyle{merge} = [regular polygon, regular polygon sides=3, minimum width=1cm, minimum height=1cm, 
+        scale=0.5, text centered, shape border rotate=180, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
